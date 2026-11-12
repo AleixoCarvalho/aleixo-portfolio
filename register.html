@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — Aleixo Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gravity" aria-hidden="true"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="logo">Aleixo <span>Portfolio</span></a>
+  <button class="burger" aria-label="Menu">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="register.html" class="active">Register</a></li>
+    <li><a href="booking.html">Book</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <div class="side">
+    <div class="eyebrow">Client registration</div>
+    <h1>Let's get to know you.</h1>
+    <p>Create your client profile. It takes less than a minute and helps me prepare properly for our first meeting.</p>
+    <ul>
+      <li>Your details stay private</li>
+      <li>No payment required</li>
+      <li>Book straight after registering</li>
+    </ul>
+  </div>
+  <div class="formwrap">
+    <form data-subject="New client registration — Aleixo Portfolio"
+          data-thanks="Your registration has been received. You can now book your first appointment.">
+      <div class="row">
+        <div class="field"><label for="first">First name</label><input id="first" name="first_name" required autocomplete="given-name"></div>
+        <div class="field"><label for="last">Last name</label><input id="last" name="last_name" required autocomplete="family-name"></div>
+      </div>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" name="phone" required autocomplete="tel" pattern="[0-9+()\s-]{7,}"></div>
+      <div class="field"><label for="company">Company (optional)</label><input id="company" name="company" autocomplete="organization"></div>
+      <div class="field"><label for="notes">What can I help you with?</label><textarea id="notes" name="notes"></textarea></div>
+      <div class="field check"><input type="checkbox" id="consent" name="consent" value="yes" required><span>I agree to be contacted about my enquiry.</span></div>
+      <button type="submit" class="btn">Create profile</button>
+      <div class="error" role="alert"></div>
+    </form>
+  </div>
+</main>
+
+<script src="gravity.js"></script>
+<script src="forms.js"></script>
+</body>
+</html>

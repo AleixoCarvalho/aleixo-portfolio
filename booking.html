@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book an appointment — Aleixo Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gravity" aria-hidden="true"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="logo">Aleixo <span>Portfolio</span></a>
+  <button class="burger" aria-label="Menu">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="booking.html" class="active">Book</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <div class="side">
+    <div class="eyebrow">Appointments</div>
+    <h1>Book your session.</h1>
+    <p>Pick a weekday and a time slot. I'll confirm your appointment by email within 24 hours.</p>
+    <ul>
+      <li>Monday – Friday</li>
+      <li>09:00 – 17:00</li>
+      <li>In person or online</li>
+    </ul>
+  </div>
+  <div class="formwrap">
+    <form data-subject="New appointment request — Aleixo Portfolio" data-slots="1"
+          data-thanks="Your appointment request has been sent. You'll receive a confirmation by email shortly.">
+      <div class="row">
+        <div class="field"><label for="name">Full name</label><input id="name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="service">Type</label>
+          <select id="service" name="service" required>
+            <option value="">Select…</option>
+            <option>Consultation</option>
+            <option>Project meeting</option>
+            <option>Follow-up</option>
+          </select></div>
+        <div class="field"><label for="mode">Format</label>
+          <select id="mode" name="format" required>
+            <option>In person</option>
+            <option>Online</option>
+          </select></div>
+      </div>
+      <div class="field"><label for="date">Date</label><input id="date" type="date" name="date" required></div>
+      <div class="field"><label>Time</label>
+        <div class="slots">
+          <label><input type="radio" name="time" value="09:00"><span>09:00</span></label>
+          <label><input type="radio" name="time" value="10:00"><span>10:00</span></label>
+          <label><input type="radio" name="time" value="11:00"><span>11:00</span></label>
+          <label><input type="radio" name="time" value="12:00"><span>12:00</span></label>
+          <label><input type="radio" name="time" value="14:00"><span>14:00</span></label>
+          <label><input type="radio" name="time" value="15:00"><span>15:00</span></label>
+          <label><input type="radio" name="time" value="16:00"><span>16:00</span></label>
+          <label><input type="radio" name="time" value="17:00"><span>17:00</span></label>
+        </div>
+      </div>
+      <div class="field"><label for="msg">Notes (optional)</label><textarea id="msg" name="notes"></textarea></div>
+      <button type="submit" class="btn">Request appointment</button>
+      <div class="error" role="alert"></div>
+    </form>
+  </div>
+</main>
+
+<script src="gravity.js"></script>
+<script src="forms.js"></script>
+</body>
+</html>
