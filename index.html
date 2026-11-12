@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aleixo Portfolio</title>
+<meta name="description" content="Aleixo Portfolio — register as a client and book an appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gravity" aria-hidden="true"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="logo">Aleixo <span>Portfolio</span></a>
+  <button class="burger" aria-label="Menu">☰</button>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="booking.html">Book</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Aleixo Carvalho — Portfolio</div>
+  <h1>Ideas that <em>defy</em> gravity.</h1>
+  <p>Professional, considered work for clients who care about the details. Create your client profile in a minute, then book a time that suits you.</p>
+  <div class="cta">
+    <a href="booking.html" class="btn solid">Book an appointment</a>
+    <a href="register.html" class="btn">Become a client</a>
+  </div>
+  <div class="scroll-hint">Scroll ↓</div>
+</header>
+
+<section class="block">
+  <h2>How it works</h2>
+  <div class="grid">
+    <div class="card"><div class="num">01</div><h3>Register</h3><p>Create your client profile so I know who you are and what you need before we meet.</p></div>
+    <div class="card"><div class="num">02</div><h3>Book</h3><p>Choose a date and a time slot that works for you. You'll receive a confirmation by email.</p></div>
+    <div class="card"><div class="num">03</div><h3>Meet</h3><p>We sit down together, talk through your goals and agree on a clear plan forward.</p></div>
+  </div>
+</section>
+
+<section class="band">
+  <h2>Ready when you are.</h2>
+  <a href="booking.html" class="btn">Reserve your slot</a>
+</section>
+
+<footer>
+  <span>© <span id="yr"></span> Aleixo Portfolio</span>
+  <span><a href="register.html">Register</a> · <a href="booking.html">Book</a></span>
+</footer>
+
+<script src="gravity.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
