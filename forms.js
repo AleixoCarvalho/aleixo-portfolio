@@ -3,6 +3,9 @@
 const FORM_EMAIL = 'aleixus3@gmail.com';
 
 document.querySelectorAll('form[data-subject]').forEach(form => {
+  // This script saves to Skybase itself (one handler, one message), so tell Skybase's
+  // auto-hook to leave this form alone.
+  form.__skybase = true;
   const status = form.querySelector('.error');
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -17,8 +20,7 @@ document.querySelectorAll('form[data-subject]').forEach(form => {
     record.submitted_at = new Date().toISOString();
     try{
       // 1) Save to the Skybase database (only reachable while Skybase is running on this computer)
-      // Forms marked data-skybase are saved by Skybase's own script, so don't save them twice.
-      const savedToDb = (form.dataset.skybase && window.Skybase) ? true : await saveToSkybase(form.dataset.table, record);
+      const savedToDb = await saveToSkybase(form.dataset.skybase || form.dataset.table, record);
       // 2) Email backup via FormSubmit
       let emailed = false;
       try{
